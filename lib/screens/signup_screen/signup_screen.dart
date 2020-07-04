@@ -51,7 +51,7 @@ class SignUpScreen extends StatelessWidget {
             ),
             SizedBox(height: 20.0),
             InputFieldContainer(
-              hintText: 'Reapeat Password',
+              hintText: 'Repeat Password',
               onChanged: (value) {},
               obscureText: true,
               suffix: Icon(
