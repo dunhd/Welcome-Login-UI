@@ -32,6 +32,7 @@ class InputFieldContainer extends StatelessWidget {
 
   TextStyle inputFieldTextStyle() {
     return TextStyle(
+      color: kPrimaryColor,
       fontFamily: 'Roboto',
       fontSize: 20.0,
       fontWeight: FontWeight.bold,

@@ -2,8 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:welcome_login_ui/constants.dart';
 
 class ScreenHeading extends StatelessWidget {
+  final Widget route;
+  final String screenAction;
+  final String screenOption;
   const ScreenHeading({
     Key key,
+    @required this.route,
+    this.screenAction,
+    this.screenOption,
   }) : super(key: key);
 
   @override
@@ -17,7 +23,7 @@ class ScreenHeading extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.baseline,
           children: <Widget>[
             Text(
-              'Log In',
+              screenAction,
               style: TextStyle(
                   color: kTextColor,
                   fontFamily: 'Roboto',
@@ -26,11 +32,18 @@ class ScreenHeading extends StatelessWidget {
             ),
             Spacer(),
             InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => route,
+                  ),
+                );
+              },
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Text(
-                  'Sign Up',
+                  screenOption,
                   style: TextStyle(
                       color: kPrimaryColor,
                       fontFamily: 'Roboto',

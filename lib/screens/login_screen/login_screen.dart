@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:welcome_login_ui/constants.dart';
-import 'components/screen_heading.dart';
-import 'components/input_field_container.dart';
-import 'components/action_button.dart';
+import '../../components/screen_heading.dart';
+import '../../components/input_field_container.dart';
+import '../../components/action_button.dart';
 import 'components/social_icons.dart';
+import 'package:welcome_login_ui/screens/signup_screen/signup_screen.dart';
+import 'package:welcome_login_ui/components/profile_photo.dart';
+import 'package:welcome_login_ui/components/extra_info.dart';
 
 class LogInScreen extends StatelessWidget {
   @override
@@ -15,11 +18,14 @@ class LogInScreen extends StatelessWidget {
         scrollDirection: Axis.vertical,
         child: Column(
           children: <Widget>[
-            ScreenHeading(),
+            ScreenHeading(
+              route: SignUpScreen(),
+              screenAction: 'Log In',
+              screenOption: 'Sign Up',
+            ),
             SizedBox(height: size.height * 0.08),
-            CircleAvatar(
-              radius: 70.0,
-              backgroundImage: AssetImage('assets/images/duncohd.jpg'),
+            ProfilePhoto(
+              imgUrl: 'assets/images/duncohd.jpg',
             ),
             SizedBox(height: size.height * 0.08),
             InputFieldContainer(
@@ -42,17 +48,14 @@ class LogInScreen extends StatelessWidget {
               action: 'LOG IN',
             ),
             SizedBox(height: size.height * 0.08),
-            Text(
-              'Login with',
-              style: TextStyle(
-                fontFamily: 'Roboto',
-                fontSize: 15.0,
-              ),
+            ExtraInfo(
+              info: 'Login with',
             ),
             SizedBox(
               height: 20.0,
             ),
             SocialIcons(),
+            SizedBox(height: size.height * 0.08),
           ],
         ),
       ),
